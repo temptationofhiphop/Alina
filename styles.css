@@ -3,6 +3,11 @@
     src: url("Dogname.ttf");
 }
 
+@font-face {
+    font-family: 'Chicken Pie';
+    src: url("chicken.ttf");
+}
+
 .video-container {
     display: flex;
     justify-content: center;
@@ -28,7 +33,7 @@
 .accordion {
     margin: 60px auto;
     width: 600px;
-    font-family: 'Dogname', sans-serif;
+    font-family: 'Chicken Pie', sans-serif;
 }
 
 .accordion li {
@@ -191,14 +196,14 @@ button i {
         }
 
         .video {
-            width: 300px;
-            height: 400px;
+            width: 400px;
+            height: 600px;
         }
 
         .accordion {
             margin: 60px auto;
             width: 600px;
-            font-family: 'Dogname', sans-serif;
+            font-family: 'Chicken Pie', sans-serif;
         }
 
         .accordion li {
@@ -215,7 +220,7 @@ button i {
             display: flex;
             align-items: center;
             padding: 10px;
-            font-size: 18px;
+            font-size: 24px;
             font-weight: 500;
             cursor: pointer;
         }
