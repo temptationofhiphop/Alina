@@ -1,3 +1,7 @@
+body{
+    background: #fefefe;
+}
+
 @font-face {
     font-family: 'Dogname';
     src: url("Dogname.ttf");
