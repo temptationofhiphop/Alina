@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Alina</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="main.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+<div class="names">
+    <p class="name">Alina, click on me!</p>
+</div>
+
+<div class="video-container">
+    <video id="video1" autoplay muted class="video">
+        <source src="video1.mp4" type="video/mp4">
+    </video>
+
+    <video id="video2" class="video">
+        <source src="video2.mp4" type="video/mp4">
+    </video>
+
+</div>
+
+<div class="replay-button"><button id="replayButton">
+    <i class="fas fa-redo-alt"></i>
+</button></div>
+
+
+<div class="names">
+    <h1 class="ml7">
+  <span class="text-wrapper">
+    <span class="letters">Happy 8th of march sweetie!</span>
+  </span>
+    </h1>
+</div>
+
+<ul class="accordion">
+    <li>
+        <input type="radio" name="accordion" id="first">
+        <label for="first">Reasons why Alina is the best in the world</label>
+        <div class="content">
+            <p>- Studies 25 for 8 👩‍🎓
+                <br>- Looks incredibly beautiful ❤️
+                <br>- Plays Minecraft 🎮
+                <br>- Just the best girl in the world. 🌸
+                <br>- Listens to the best music 🎵
+                <br>- Creates the best TikTok videos 🌚</p>
+        </div>
+    </li>
+</ul>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const video1 = document.getElementById('video1');
+        const video2 = document.getElementById('video2');
+        const h1 = document.querySelector('.ml7');
+        const replayButton = document.querySelector('.replay-button');
+
+        video1.style.display = "block";
+        video2.style.display = "none";
+        replayButton.style.display = "none";
+        h1.style.color = "white";
+
+        video1.addEventListener('click', function () {
+            video1.style.display = "none";
+            video2.style.display = "block";
+            video2.play();
+
+        });
+
+        video2.addEventListener('ended', function () {
+            h1.style.color = "pink";
+            replayButton.style.display = "flex";
+        });
+
+        video1.play();
+
+        replayButton.addEventListener('click', function () {
+            video2.style.display = "none";
+            video1.style.display = "block";
+            video1.play();
+            replayButton.style.display = "none"; // Hide replay button when video1 is playing again
+            h1.style.color = "white";
+        });
+    })
+
+    // Wrap every letter in a span
+    var textWrapper = document.querySelector('.ml7 .letters');
+    textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+    anime.timeline({loop: true})
+        .add({
+            targets: '.ml7 .letter',
+            translateY: ["1.1em", 0],
+            translateX: ["0.55em", 0],
+            translateZ: 0,
+            rotateZ: [180, 0],
+            duration: 750,
+            easing: "easeOutExpo",
+            delay: (el, i) => 50 * i
+        }).add({
+        targets: '.ml7',
+        opacity: 0,
+        duration: 1000,
+        easing: "easeOutExpo",
+        delay: 1000
+    });
+</script>
+
+</body>
+</html>

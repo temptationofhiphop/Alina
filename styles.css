@@ -1,0 +1,169 @@
+@font-face {
+    font-family: 'Dogname';
+    src: url("Dogname.ttf");
+}
+
+.video-container {
+    display: flex;
+    justify-content: center;
+}
+
+.names {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Dogname', sans-serif;
+    font-size: 40px;
+}
+
+.name {
+    margin: 60px 80px 0 80px;
+}
+
+.video {
+    width: 300px;
+    height: 400px;
+}
+
+.accordion {
+    margin: 60px auto;
+    width: 600px;
+    font-family: 'Dogname', sans-serif;
+}
+
+.accordion li {
+    list-style: none;
+    width: 100%;
+    margin: 20px;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, .15),
+    -6px -6px 10px -1px rgba(255, 255, 255, .7);
+}
+
+.accordion li label {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+label::before {
+    content: '+';
+    margin-right: 10px;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+.accordion .content {
+    color: #555;
+    padding: 0 10px;
+    line-height: 26px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .5s, padding .5s;
+}
+
+input[type="radio"]:checked + label + .content {
+    max-height: 600px;
+    padding: 10px 10px 20px;
+    line-height: 50px;
+}
+
+input[type="radio"]:checked + label::before {
+    content: '-';
+}
+
+.ml7 {
+    position: relative;
+    font-weight: 900;
+    font-size: 1em;
+    color: white;
+}
+
+.ml7 .text-wrapper {
+    position: relative;
+    display: inline-block;
+    padding-top: 0.2em;
+    padding-right: 0.05em;
+    padding-bottom: 0.1em;
+    overflow: hidden;
+}
+
+.ml7 .letter {
+    transform-origin: 0 100%;
+    display: inline-block;
+    line-height: 1em;
+}
+
+.replay-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    background: white;
+    border: none;
+}
+
+button i{
+    height: 80px;
+    width: 80px;
+}
+
+#replayButton .fas {
+    font-size: 40px; /* Set the size of the icon */
+    vertical-align: middle; /* Align the icon vertically within the button */
+}
+
+@media screen and (min-width: 375px){
+    .names {
+        font-size: 80px;
+    }
+    .name{
+        margin: 320px 80px 0 80px;
+    }
+
+    .video {
+        width: 800px;
+        height: 1000px;
+    }
+
+    .ml7{
+        font-size: 60px;
+    }
+
+    .accordion {
+        margin: 20px 62px;
+        width: 700px;
+        font-family: 'Dogname', sans-serif;
+    }
+
+    .accordion li label {
+        font-size: 32px;
+        text-align: center;
+    }
+
+    label::before {
+        font-size: 32px;
+        font-weight: 600;
+    }
+
+    #replayButton .fas {
+        font-size: 60px; /* Set the size of the icon */
+        vertical-align: middle; /* Align the icon vertically within the button */
+    }
+
+    input[type="radio"]:checked + label + .content {
+        font-size: 36px;
+        line-height: 60px;
+    }
+
+}
